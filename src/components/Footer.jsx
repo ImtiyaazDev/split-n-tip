@@ -1,6 +1,6 @@
 export default function Footer() {
 	return (
-		<p className="font-heading col-span-full text-stone-600">
+		<p className="font-heading col-span-full text-stone-500">
 			Designed and built by{" "}
 			<a
 				href="https:github.com/Imtiyaazdev"
