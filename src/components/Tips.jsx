@@ -2,7 +2,7 @@ import PriceTag from "./PriceTag";
 
 export default function Tips() {
 	return (
-		<div className="row-start-3 row-end-3 flex flex-col gap-3 rounded-2xl bg-stone-200 p-5">
+		<div className="flex h-fit flex-col gap-3 rounded-2xl bg-stone-200 p-5">
 			<form className="flex items-center justify-between">
 				<label className="text-lg font-bold text-stone-700">Tip (%)</label>
 				<input
