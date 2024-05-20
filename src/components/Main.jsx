@@ -1,17 +1,15 @@
 import ButtonGroup from "./ButtonGroup";
 import FriendMeals from "./FriendMeals";
+import Payments from "./Payments";
+import Tips from "./Tips";
 
 export default function Main() {
 	return (
-		<main className="col-span-full grid h-full w-full grid-rows-4">
+		<main className="col-span-full grid h-full w-full grid-rows-4 gap-y-6">
 			<ButtonGroup />
 			<FriendMeals />
-			<div>
-				<h2>tips</h2>
-			</div>
-			<div>
-				<h2>Payments</h2>
-			</div>
+			<Tips />
+			<Payments />
 		</main>
 	);
 }
