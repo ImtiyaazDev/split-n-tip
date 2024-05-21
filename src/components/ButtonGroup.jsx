@@ -1,9 +1,17 @@
+import { useDispatch } from "react-redux";
+import { showModal } from "../slices/modalSlice";
 import Button from "./Button";
 
 export default function ButtonGroup() {
+	const dispatch = useDispatch();
+
+	const handleClick = () => {
+		dispatch(showModal(true));
+	};
+
 	return (
-		<div className="row-start-1 row-end-1 flex items-start justify-between relative">
-			<Button type="primary">Add Payee</Button>
+		<div className="relative row-start-1 row-end-1 flex items-start justify-between">
+			<Button type="primary" onClick={handleClick}>Add Payee</Button>
 			<Button type="secondary">New Bill</Button>
 		</div>
 	);
