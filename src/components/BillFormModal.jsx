@@ -1,6 +1,15 @@
+import { useDispatch } from "react-redux";
+
+import { toggleModal } from "../slices/modalSlice";
 import Button from "./Button";
 
 export default function BillFormModal() {
+	const dispatch = useDispatch();
+
+	const handleCancel = () => {
+		dispatch(toggleModal(false));
+	};
+
 	return (
 		<form className="col-span-full flex h-2/3 flex-col items-center justify-evenly gap-4 rounded-2xl bg-stone-300 p-5">
 			<h2 className="font-heading text-2xl text-stone-700">Billing Details</h2>
@@ -23,7 +32,12 @@ export default function BillFormModal() {
 				</div>
 				<div className="flex justify-evenly">
 					<Button type="form">Submit</Button>
-					<Button type="cancel">Cancel</Button>
+					<Button
+						type="cancel"
+						onClick={handleCancel}
+					>
+						Cancel
+					</Button>
 				</div>
 			</div>
 		</form>
