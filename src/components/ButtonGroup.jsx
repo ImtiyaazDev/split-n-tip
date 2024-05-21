@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
-import { showModal } from "../slices/modalSlice";
+import { toggleModal } from "../slices/modalSlice";
 import Button from "./Button";
 
 export default function ButtonGroup() {
 	const dispatch = useDispatch();
 
 	const handleClick = () => {
-		dispatch(showModal(true));
+		dispatch(toggleModal(true));
 	};
 
 	return (
