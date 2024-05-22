@@ -32,7 +32,7 @@ export default function Tips() {
 	return (
 		<div className="flex h-fit flex-col gap-3 rounded-2xl bg-stone-200 p-5">
 			<form className="flex items-center justify-between">
-				<label className="text-lg font-bold text-stone-700">Tip (%)</label>
+				<label className="text-xl font-bold text-stone-700">Tip (%)</label>
 				<input
 					type="number"
 					className="w-20 rounded-full bg-violet-300 p-3 text-center text-violet-600 outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
@@ -44,11 +44,13 @@ export default function Tips() {
 				/>
 			</form>
 			<div className="flex items-center justify-between">
-				<p className="text-lg font-bold text-stone-700">Tip Amount</p>
+				<p className="text-xl font-bold text-stone-700">Tip Amount</p>
 				<PriceTag amount={tipAmount} />
 			</div>
 			<div className="flex items-center justify-between">
-				<p className="font-bold text-stone-700">Tip Amount per person</p>
+				<p className="text-xl font-bold text-stone-700">
+					Tip Amount per person
+				</p>
 				<PriceTag amount={tipAmountPerPerson} />
 			</div>
 		</div>
