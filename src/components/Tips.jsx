@@ -37,7 +37,7 @@ export default function Tips() {
 				<label className="text-xl font-bold text-stone-700">Tip (%)</label>
 				<input
 					type="number"
-					className="w-20 rounded-full bg-violet-300 p-3 text-center text-violet-600 outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+					className="w-24 rounded-full bg-violet-300 p-3 text-center text-violet-600 outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
 					placeholder="5"
 					defaultValue={tipPercent}
 					onChange={handleChange}
