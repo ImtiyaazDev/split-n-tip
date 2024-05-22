@@ -5,7 +5,8 @@ const initialState = {
 	users: [],
 	billAmount: 0,
 	tipPercent: 10,
-	tipAmount: 0
+	tipAmount: 0,
+	tipAmountPerPerson: 0
 };
 
 const billSlice = createSlice({
@@ -43,6 +44,9 @@ const billSlice = createSlice({
 		},
 		updateTipAmount: (state) => {
 			state.tipAmount = (state.tipPercent / 100) * state.billAmount;
+		},
+		updateTipAmountPerPerson: (state) => {
+			state.tipAmountPerPerson = state.tipAmount / state.users.length;
 		}
 	}
 });
@@ -55,6 +59,7 @@ export const {
 	removeLastUser,
 	resetBill,
 	updateTipPercent,
-	updateTipAmount
+	updateTipAmount,
+	updateTipAmountPerPerson
 } = billSlice.actions;
 export default billSlice.reducer;
