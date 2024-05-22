@@ -2,7 +2,11 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { toggleModal } from "../slices/modalSlice";
-import { updateBillAmount, updateName } from "../slices/billSlice";
+import {
+	updateBillAmount,
+	updateName,
+	calculateBillAmount
+} from "../slices/billSlice";
 import Button from "./Button";
 
 export default function BillFormModal() {
@@ -19,6 +23,7 @@ export default function BillFormModal() {
 			dispatch(updateName({ id: userId, name }));
 			dispatch(updateBillAmount({ id: userId, amount: billAmount }));
 			dispatch(toggleModal(false));
+			dispatch(calculateBillAmount());
 		}
 	};
 
