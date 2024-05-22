@@ -11,7 +11,7 @@ export default function FriendMeals() {
 	return (
 		<div className="space-y-8 rounded-2xl bg-stone-200 p-5">
 			{users.length === 0 ? (
-				<Message message="Add a new bill..." />
+				<Message message="Add a new payee..." />
 			) : (
 				<>
 					<FriendsList />

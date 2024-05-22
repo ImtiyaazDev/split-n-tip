@@ -14,7 +14,7 @@ export default function Payments() {
 	return (
 		<div className="h-fit space-y-6 rounded-2xl bg-violet-200 p-5">
 			{users.length === 0 ? (
-				<Message message="Add a new bill..." />
+				<Message message="Add a new payee..." />
 			) : (
 				<>
 					<ul>
