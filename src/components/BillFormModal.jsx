@@ -19,6 +19,8 @@ export default function BillFormModal() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
+		if (billAmount <= 0 || !name) return;
+
 		const userId = users.length ? users[users.length - 1].id : null;
 		if (userId) {
 			dispatch(updateName({ id: userId, name }));
@@ -61,15 +63,26 @@ export default function BillFormModal() {
 							onChange={(e) => setBillAmount(e.target.value)}
 						/>
 					</div>
-					<div className="flex justify-evenly">
-						<Button type="form">Submit</Button>
-						<Button
-							type="cancel"
-							onClick={handleCancel}
-						>
-							Cancel
-						</Button>
-					</div>
+					{billAmount <= 0 || !name ? (
+						<p className="text-wrap text-center text-red-500">
+							Please add a name and value
+						</p>
+					) : (
+						<div className="flex justify-evenly">
+							<Button
+								type="form"
+								disabled={billAmount <= 0 || !name}
+							>
+								Submit
+							</Button>
+							<Button
+								type="cancel"
+								onClick={handleCancel}
+							>
+								Cancel
+							</Button>
+						</div>
+					)}
 				</div>
 			</form>
 		</>
