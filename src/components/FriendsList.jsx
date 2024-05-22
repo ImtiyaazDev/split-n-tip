@@ -9,7 +9,7 @@ export default function FriendsList() {
 		<ul>
 			{users.map((user) => (
 				<Friend
-					key={user.name}
+					key={user.id}
 					name={user.name}
 					amount={user.amount}
 				/>
