@@ -22,6 +22,7 @@ export default function ButtonGroup() {
 			<Button
 				type="primary"
 				onClick={handleClick}
+				disabled={isOpen}
 			>
 				Add Payee
 			</Button>
