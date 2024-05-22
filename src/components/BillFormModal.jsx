@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { toggleModal } from "../slices/modalSlice";
 import { updateBillAmount, updateName } from "../slices/billSlice";
@@ -9,12 +9,17 @@ export default function BillFormModal() {
 	const [name, setName] = useState("");
 	const [billAmount, setBillAmount] = useState(0);
 	const dispatch = useDispatch();
+	const users = useSelector((store) => store.bill.users);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		dispatch(updateName(name));
-		dispatch(updateBillAmount(billAmount));
-		dispatch(toggleModal(false));
+
+		const userId = users.length ? users[users.length - 1].id : null;
+		if (userId) {
+			dispatch(updateName({ id: userId, name }));
+			dispatch(updateBillAmount({ id: userId, amount: billAmount }));
+			dispatch(toggleModal(false));
+		}
 	};
 
 	const handleCancel = () => {
