@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../slices/modalSlice";
-import { addUser, resetBill } from "../slices/billSlice";
+import { addUser, resetState } from "../slices/billSlice";
 import Button from "./Button";
 
 export default function ButtonGroup() {
@@ -14,7 +14,7 @@ export default function ButtonGroup() {
 	};
 
 	const handleNewBill = () => {
-		dispatch(resetBill());
+		dispatch(resetState());
 		if (isOpen) dispatch(toggleModal(false));
 	};
 
