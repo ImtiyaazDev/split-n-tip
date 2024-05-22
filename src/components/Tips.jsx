@@ -1,19 +1,33 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import PriceTag from "./PriceTag";
 import { useDispatch, useSelector } from "react-redux";
-import { updateTipPercent } from "../slices/billSlice";
+import {
+	updateTipAmount,
+	updateTipAmountPerPerson,
+	updateTipPercent
+} from "../slices/billSlice";
 
 export default function Tips() {
-	const billAmount = useSelector((store) => store.bill.billAmount);
 	const tipPercent = useSelector((store) => store.bill.tipPercent);
-	const tipAmount = (tipPercent / 100) * billAmount;
-	const users = useSelector((store) => store.bill.users);
-	const tipAmountPerPerson = tipAmount / users.length;
+	const tipAmount = useSelector((store) => store.bill.tipAmount);
+	const tipAmountPerPerson = useSelector(
+		(store) => store.bill.tipAmountPerPerson
+	);
 	const dispatch = useDispatch();
 
 	const handleChange = (e) => {
 		dispatch(updateTipPercent(e.target.value));
 	};
+
+	useEffect(
+		function () {
+			if (tipPercent) {
+				dispatch(updateTipAmount());
+				dispatch(updateTipAmountPerPerson());
+			}
+		},
+		[dispatch, tipPercent]
+	);
 
 	return (
 		<div className="flex h-fit flex-col gap-3 rounded-2xl bg-stone-200 p-5">
