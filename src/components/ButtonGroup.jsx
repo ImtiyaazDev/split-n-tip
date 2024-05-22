@@ -5,6 +5,7 @@ import Button from "./Button";
 
 export default function ButtonGroup() {
 	const isOpen = useSelector((store) => store.modal.isOpen);
+	const users = useSelector((store) => store.bill.users);
 	const dispatch = useDispatch();
 
 	const handleAddUser = () => {
@@ -29,6 +30,7 @@ export default function ButtonGroup() {
 			<Button
 				type="secondary"
 				onClick={handleNewBill}
+				disabled={!isOpen && !users.length}
 			>
 				New Bill
 			</Button>
