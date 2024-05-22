@@ -1,6 +1,6 @@
 export default function PriceTag({ amount }) {
 	return (
-		<p className="rounded-full bg-indigo-300 px-6 py-3 text-indigo-600">
+		<p className="rounded-full bg-violet-300 px-6 py-3 text-violet-600">
 			R{amount}
 		</p>
 	);
