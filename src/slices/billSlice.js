@@ -35,9 +35,12 @@ const billSlice = createSlice({
 		removeLastUser: (state) => {
 			state.users.pop();
 		},
-		resetBill: (state) => {
+		resetState: (state) => {
 			state.users = [];
 			state.billAmount = 0;
+			state.tipPercent = 10;
+			state.tipAmountPerPerson = 0;
+			state.tipAmount = 0;
 		},
 		updateTipPercent: (state, action) => {
 			state.tipPercent = action.payload;
@@ -57,7 +60,7 @@ export const {
 	updateBillAmount,
 	calculateBillAmount,
 	removeLastUser,
-	resetBill,
+	resetState,
 	updateTipPercent,
 	updateTipAmount,
 	updateTipAmountPerPerson
