@@ -35,7 +35,7 @@ export default function BillFormModal() {
 
 	return (
 		<form
-			className="col-span-full flex h-2/3 flex-col items-center justify-evenly gap-4 rounded-2xl bg-stone-300 p-5"
+			className="col-span-full flex h-2/3 flex-col items-center justify-evenly gap-4 rounded-2xl bg-stone-200 p-5"
 			onSubmit={handleSubmit}
 		>
 			<h2 className="font-heading text-2xl text-stone-700">Billing Details</h2>
