@@ -51,7 +51,7 @@ export default function Tips() {
 				<p className="text-xl font-bold text-stone-700">
 					Tip Amount per person
 				</p>
-				<PriceTag amount={tipAmountPerPerson} />
+				<PriceTag amount={tipAmountPerPerson || 0} />
 			</div>
 		</div>
 	);
