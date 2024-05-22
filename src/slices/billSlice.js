@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 const initialState = {
-	users: []
+	users: [],
+	billAmount: 0
 };
 
 const billSlice = createSlice({
@@ -20,10 +21,17 @@ const billSlice = createSlice({
 		updateBillAmount: (state, action) => {
 			const { id, amount } = action.payload;
 			const user = state.users.find((user) => user.id === id);
-			if (user) user.amount = amount;
+			if (user) user.amount = parseFloat(amount);
+		},
+		calculateBillAmount: (state) => {
+			state.billAmount = state?.users.reduce(
+				(acc, curValue) => acc + curValue.amount,
+				0
+			);
 		}
 	}
 });
 
-export const { addUser, updateName, updateBillAmount } = billSlice.actions;
+export const { addUser, updateName, updateBillAmount, calculateBillAmount } =
+	billSlice.actions;
 export default billSlice.reducer;
