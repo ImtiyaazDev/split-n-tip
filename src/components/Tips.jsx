@@ -8,8 +8,8 @@ export default function Tips() {
 				<input
 					type="number"
 					className="w-20 rounded-full bg-indigo-300 p-3 text-center text-indigo-600 outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-					placeholder="10%"
-					defaultValue="10%"
+					placeholder="5"
+					defaultValue={10}
 					min="0"
 					max="100"
 				/>
