@@ -1,15 +1,19 @@
-import PriceTag from "./PriceTag";
+import { useSelector } from "react-redux";
+
+import Friend from "./Friend";
 
 export default function FriendsList() {
+	const users = useSelector((store) => store.bill.users);
+
 	return (
 		<ul>
-			<li className="flex items-center justify-between border-b border-b-stone-400 py-2.5">
-				<div>
-					<p className="text-xl font-bold text-stone-700">Imtiyaaz</p>
-					<p className="text-stone-500">The cost of meal:</p>
-				</div>
-				<PriceTag />
-			</li>
+			{users.map((user) => (
+				<Friend
+					key={user.name}
+					name={user.name}
+					amount={user.amount}
+				/>
+			))}
 		</ul>
 	);
 }
