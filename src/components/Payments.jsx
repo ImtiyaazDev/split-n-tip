@@ -7,6 +7,8 @@ export default function Payments() {
 	const tipAmountPerPerson = useSelector(
 		(store) => store.bill.tipAmountPerPerson
 	);
+	const tipAmount = useSelector((store) => store.bill.tipAmount);
+	const billAmount = useSelector((store) => store.bill.billAmount);
 
 	return (
 		<div className="h-fit space-y-6 rounded-2xl bg-violet-200 p-5">
@@ -21,7 +23,7 @@ export default function Payments() {
 			</ul>
 			<div className="flex items-center justify-between">
 				<p className="text-xl font-bold text-violet-800">Total</p>
-				<PriceTag />
+				<PriceTag amount={tipAmount + billAmount} />
 			</div>
 		</div>
 	);
