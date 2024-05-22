@@ -5,7 +5,8 @@ import { toggleModal } from "../slices/modalSlice";
 import {
 	updateBillAmount,
 	updateName,
-	calculateBillAmount
+	calculateBillAmount,
+	removeLastUser
 } from "../slices/billSlice";
 import Button from "./Button";
 
@@ -28,6 +29,7 @@ export default function BillFormModal() {
 	};
 
 	const handleCancel = () => {
+		dispatch(removeLastUser());
 		dispatch(toggleModal(false));
 	};
 
