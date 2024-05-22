@@ -7,7 +7,7 @@ export default function ButtonGroup() {
 	const isOpen = useSelector((store) => store.modal.isOpen);
 	const dispatch = useDispatch();
 
-	const handleClick = () => {
+	const handleAddUser = () => {
 		dispatch(toggleModal(true));
 		dispatch(addUser());
 	};
@@ -21,7 +21,7 @@ export default function ButtonGroup() {
 		<div className="relative row-start-1 row-end-1 flex items-start justify-between">
 			<Button
 				type="primary"
-				onClick={handleClick}
+				onClick={handleAddUser}
 				disabled={isOpen}
 			>
 				Add Payee
