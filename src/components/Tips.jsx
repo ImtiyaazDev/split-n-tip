@@ -19,6 +19,8 @@ export default function Tips() {
 		dispatch(updateTipPercent(e.target.value));
 	};
 
+	const formatToTwoDigits = (amount) => Number(amount.toFixed(2));
+
 	useEffect(
 		function () {
 			if (tipPercent) {
@@ -45,7 +47,7 @@ export default function Tips() {
 			</form>
 			<div className="flex items-center justify-between">
 				<p className="text-xl font-bold text-stone-700">Tip Amount</p>
-				<PriceTag amount={tipAmount} />
+				<PriceTag amount={formatToTwoDigits(tipAmount)} />
 			</div>
 			<div className="flex items-center justify-between">
 				<p className="text-xl font-bold text-stone-700">

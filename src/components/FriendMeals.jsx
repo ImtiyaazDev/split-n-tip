@@ -8,6 +8,8 @@ export default function FriendMeals() {
 	const billAmount = useSelector((store) => store.bill.billAmount);
 	const users = useSelector((store) => store.bill.users);
 
+	const formatToTwoDigits = (amount) => Number(amount.toFixed(2));
+	
 	return (
 		<div className="space-y-8 rounded-2xl bg-stone-200 p-5">
 			{users.length === 0 ? (
@@ -17,7 +19,7 @@ export default function FriendMeals() {
 					<FriendsList />
 					<div className="flex items-center justify-between">
 						<p className="text-2xl font-bold text-violet-600">Bill Amount</p>
-						<PriceTag amount={billAmount} />
+						<PriceTag amount={formatToTwoDigits(billAmount)} />
 					</div>
 				</>
 			)}
