@@ -3,7 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 
 const initialState = {
 	users: [],
-	billAmount: 0
+	billAmount: 0,
+	tipPercent: 10
 };
 
 const billSlice = createSlice({
@@ -35,6 +36,9 @@ const billSlice = createSlice({
 		resetBill: (state) => {
 			state.users = [];
 			state.billAmount = 0;
+		},
+		updateTipPercent: (state, action) => {
+			state.tipPercent = action.payload;
 		}
 	}
 });
@@ -45,6 +49,7 @@ export const {
 	updateBillAmount,
 	calculateBillAmount,
 	removeLastUser,
-	resetBill
+	resetBill,
+	updateTipPercent
 } = billSlice.actions;
 export default billSlice.reducer;
