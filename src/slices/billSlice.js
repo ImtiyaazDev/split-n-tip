@@ -32,8 +32,9 @@ const billSlice = createSlice({
 		removeLastUser: (state) => {
 			state.users.pop();
 		},
-		removeAllUsers: (state) => {
+		resetBill: (state) => {
 			state.users = [];
+			state.billAmount = 0;
 		}
 	}
 });
@@ -44,6 +45,6 @@ export const {
 	updateBillAmount,
 	calculateBillAmount,
 	removeLastUser,
-	removeAllUsers
+	resetBill
 } = billSlice.actions;
 export default billSlice.reducer;
