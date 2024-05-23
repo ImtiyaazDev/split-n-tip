@@ -17,7 +17,7 @@ export default function Payments() {
 				<Message message="Add a new payee..." />
 			) : (
 				<>
-					<ul>
+					<ul className="max-h-56 overflow-y-auto md:max-h-36">
 						{users.map((user) => (
 							<SinglePayment
 								key={user.id}
