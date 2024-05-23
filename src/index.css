@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.scrollbar {
+		/* Hide scrollbar for IE, Edge, and Firefox */
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: thin; /* Firefox */
+		padding-right: 20px;
+
+		&::-webkit-scrollbar {
+			width: 8px;
+		}
+
+		&::-webkit-scrollbar-track {
+			@apply bg-violet-50;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			@apply bg-violet-500;
+			border-radius: 4px;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+			@apply bg-violet-600;
+		}
+	}
+}
