@@ -26,7 +26,7 @@ export default function Payments() {
 							/>
 						))}
 					</ul>
-					<div className="flex items-center justify-between pr-7">
+					<div className="flex items-center justify-between pr-6">
 						<p className="text-2xl font-bold text-violet-600">Total</p>
 						<PriceTag amount={tipAmount + billAmount} />
 					</div>

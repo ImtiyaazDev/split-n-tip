@@ -17,7 +17,7 @@ export default function FriendMeals() {
 			) : (
 				<>
 					<FriendsList />
-					<div className="flex items-center justify-between pr-7">
+					<div className="flex items-center justify-between pr-6">
 						<p className="text-2xl font-bold text-violet-600">Bill Amount</p>
 						<PriceTag amount={formatToTwoDigits(billAmount)} />
 					</div>
