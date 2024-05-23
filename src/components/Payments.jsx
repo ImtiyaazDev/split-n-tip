@@ -17,7 +17,7 @@ export default function Payments() {
 				<Message message="Add a new payee..." />
 			) : (
 				<>
-					<ul className="max-h-56 overflow-y-auto md:max-h-36">
+					<ul className="scrollbar | max-h-56 overflow-y-auto md:max-h-36">
 						{users.map((user) => (
 							<SinglePayment
 								key={user.id}
@@ -26,7 +26,7 @@ export default function Payments() {
 							/>
 						))}
 					</ul>
-					<div className="flex items-center justify-between">
+					<div className="flex items-center justify-between pr-7">
 						<p className="text-2xl font-bold text-violet-600">Total</p>
 						<PriceTag amount={tipAmount + billAmount} />
 					</div>
