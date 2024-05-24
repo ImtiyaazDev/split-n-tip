@@ -1,33 +1,39 @@
 import { useSelector } from "react-redux";
+
+import {
+	getAllUsers,
+	getTipAmount,
+	getTipAmountPerPerson,
+	getBillAmount
+} from "../slices/billSlice";
+import ListItem from "./ListItem";
 import PriceTag from "./PriceTag";
-import SinglePayment from "./SinglePayment";
-import Message from "./Message";
+import Text from "./Text";
 
 export default function Payments() {
-	const users = useSelector((store) => store.bill.users);
-	const tipAmountPerPerson = useSelector(
-		(store) => store.bill.tipAmountPerPerson
-	);
-	const tipAmount = useSelector((store) => store.bill.tipAmount);
-	const billAmount = useSelector((store) => store.bill.billAmount);
+	const users = useSelector(getAllUsers);
+	const tipAmountPerPerson = useSelector(getTipAmountPerPerson);
+	const tipAmount = useSelector(getTipAmount);
+	const billAmount = useSelector(getBillAmount);
 
 	return (
 		<div className="h-fit space-y-6 rounded-2xl bg-violet-200 p-5">
 			{users.length === 0 ? (
-				<Message message="Add a new payee..." />
+				<Text>Add a new payee...</Text>
 			) : (
 				<>
 					<ul className="scrollbar | max-h-56 overflow-y-auto md:max-h-36">
 						{users.map((user) => (
-							<SinglePayment
+							<ListItem
 								key={user.id}
 								name={user.name}
 								amount={user.amount + tipAmountPerPerson}
+								item="payment"
 							/>
 						))}
 					</ul>
 					<div className="flex items-center justify-between pr-6">
-						<p className="text-2xl font-bold text-violet-600">Total</p>
+						<Text variant={true}>Total</Text>
 						<PriceTag amount={tipAmount + billAmount} />
 					</div>
 				</>

@@ -1,25 +1,26 @@
 import { useEffect } from "react";
-import PriceTag from "./PriceTag";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
 	updateTipAmount,
 	updateTipAmountPerPerson,
-	updateTipPercent
+	updateTipPercent,
+	getTipAmount,
+	getTipPercent,
+	getTipAmountPerPerson
 } from "../slices/billSlice";
+import PriceTag from "./PriceTag";
+import Text from "./Text";
 
 export default function Tips() {
-	const tipPercent = useSelector((store) => store.bill.tipPercent);
-	const tipAmount = useSelector((store) => store.bill.tipAmount);
-	const tipAmountPerPerson = useSelector(
-		(store) => store.bill.tipAmountPerPerson
-	);
+	const tipPercent = useSelector(getTipPercent);
+	const tipAmount = useSelector(getTipAmount);
+	const tipAmountPerPerson = useSelector(getTipAmountPerPerson);
 	const dispatch = useDispatch();
 
 	const handleChange = (e) => {
 		dispatch(updateTipPercent(e.target.value));
 	};
-
-	const formatToTwoDigits = (amount) => Number(amount.toFixed(2));
 
 	useEffect(
 		function () {
@@ -34,7 +35,7 @@ export default function Tips() {
 	return (
 		<div className="flex h-fit flex-col rounded-2xl bg-stone-200 px-5 py-2.5">
 			<form className="flex items-center justify-between border-b border-b-stone-400 py-2.5">
-				<label className="text-xl font-bold text-stone-700">Tip (%)</label>
+				<Text>Tip (%)</Text>
 				<input
 					type="number"
 					className="w-24 rounded-full bg-violet-300 p-3 text-center text-violet-600 outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
@@ -46,13 +47,11 @@ export default function Tips() {
 				/>
 			</form>
 			<div className="flex items-center justify-between border-b border-b-stone-400 py-2.5">
-				<p className="text-xl font-bold text-stone-700">Tip Amount</p>
-				<PriceTag amount={formatToTwoDigits(tipAmount)} />
+				<Text>Tip Amount</Text>
+				<PriceTag amount={tipAmount} />
 			</div>
 			<div className="flex items-center justify-between py-2.5">
-				<p className="text-xl font-bold text-stone-700">
-					Tip Amount per person
-				</p>
+				<Text>Tip Amount per person</Text>
 				<PriceTag amount={tipAmountPerPerson || 0} />
 			</div>
 		</div>

@@ -66,3 +66,9 @@ export const {
 	updateTipAmountPerPerson
 } = billSlice.actions;
 export default billSlice.reducer;
+
+export const getAllUsers = (store) => store.bill.users;
+export const getBillAmount = (store) => store.bill.billAmount;
+export const getTipAmountPerPerson = (store) => store.bill.tipAmountPerPerson;
+export const getTipAmount = (store) => store.bill.tipAmount;
+export const getTipPercent = (store) => store.bill.tipPercent;

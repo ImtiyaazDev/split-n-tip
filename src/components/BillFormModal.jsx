@@ -1,20 +1,25 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { toggleModal } from "../slices/modalSlice";
 import {
 	updateBillAmount,
 	updateName,
 	calculateBillAmount,
-	removeLastUser
+	removeLastUser,
+	getAllUsers
 } from "../slices/billSlice";
+import { toggleModal } from "../slices/modalSlice";
 import Button from "./Button";
+import Container from "./Container";
+import Heading from "./Heading";
+import Input from "./Input";
+import Text from "./Text";
 
 export default function BillFormModal() {
 	const [name, setName] = useState("");
 	const [billAmount, setBillAmount] = useState(0);
 	const dispatch = useDispatch();
-	const users = useSelector((store) => store.bill.users);
+	const users = useSelector(getAllUsers);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -37,32 +42,28 @@ export default function BillFormModal() {
 
 	return (
 		<>
-			<h2 className="font-heading text-2xl text-stone-700">Billing Details</h2>
+			<Heading type="h2">Billing Details</Heading>
 			<form
 				className="col-span-full flex flex-col items-center justify-evenly gap-4 rounded-2xl bg-stone-200 p-5 md:h-2/5"
 				onSubmit={handleSubmit}
 			>
-				<div className="flex flex-col gap-4">
-					<div className="flex items-center justify-between gap-7">
-						<label className="text-lg font-bold text-stone-600">Name</label>
-						<input
+				<Container>
+					<Container size="md">
+						<Text>Name</Text>
+						<Input
 							type="text"
-							required
-							className="h-8 w-40 rounded-2xl px-4 outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
 							value={name}
-							onChange={(e) => setName(e.target.value)}
+							handleChange={(e) => setName(e.target.value)}
 						/>
-					</div>
-					<div className="flex items-center justify-between gap-7">
-						<label className="text-lg font-bold text-stone-600">Amount</label>
-						<input
+					</Container>
+					<Container size="md">
+						<Text>Amount</Text>
+						<Input
 							type="number"
-							required
-							className="h-8 w-40 rounded-2xl px-4 outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
 							value={billAmount}
-							onChange={(e) => setBillAmount(e.target.value)}
+							handleChange={(e) => setBillAmount(e.target.value)}
 						/>
-					</div>
+					</Container>
 					{billAmount <= 0 || !name ? (
 						<p className="text-wrap text-center text-red-500">
 							Please add a name and value
@@ -83,7 +84,7 @@ export default function BillFormModal() {
 							</Button>
 						</div>
 					)}
-				</div>
+				</Container>
 			</form>
 		</>
 	);

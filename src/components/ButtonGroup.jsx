@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toggleModal } from "../slices/modalSlice";
-import { addUser, resetState } from "../slices/billSlice";
+
+import { addUser, resetState, getAllUsers } from "../slices/billSlice";
+import { toggleModal, getIsModalOpen } from "../slices/modalSlice";
 import Button from "./Button";
 
 export default function ButtonGroup() {
-	const isOpen = useSelector((store) => store.modal.isOpen);
-	const users = useSelector((store) => store.bill.users);
+	const isOpen = useSelector(getIsModalOpen);
+	const users = useSelector(getAllUsers);
 	const dispatch = useDispatch();
 
 	const handleAddUser = () => {

@@ -16,3 +16,5 @@ const modalSlice = createSlice({
 
 export const { toggleModal } = modalSlice.actions;
 export default modalSlice.reducer;
+
+export const getIsModalOpen = (store) => store.modal.isOpen;
