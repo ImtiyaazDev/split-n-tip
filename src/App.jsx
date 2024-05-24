@@ -4,7 +4,7 @@ import Main from "./components/Main";
 
 export default function App() {
 	return (
-		<div className="grid h-screen w-screen grid-cols-6 grid-rows-[6rem_1fr_4rem] place-items-center overflow-y-auto bg-stone-100 p-5 md:px-14 md:py-10">
+		<div className="grid h-screen w-screen grid-cols-6 grid-rows-[auto_1fr_auto] place-items-center overflow-y-auto bg-stone-100 p-5 md:px-14 md:py-10 gap-y-4">
 			<Header />
 			<Main />
 			<Footer />
