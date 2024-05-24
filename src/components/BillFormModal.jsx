@@ -35,7 +35,8 @@ export default function BillFormModal() {
 		}
 	};
 
-	const handleCancel = () => {
+	const handleCancel = (e) => {
+		e.preventDefault();
 		dispatch(removeLastUser());
 		dispatch(toggleModal(false));
 	};
