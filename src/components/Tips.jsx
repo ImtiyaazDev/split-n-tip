@@ -38,7 +38,7 @@ export default function Tips() {
 				<Text>Tip (%)</Text>
 				<input
 					type="number"
-					className="w-24 rounded-full bg-violet-300 p-3 text-center text-violet-600 outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+					className="rounded-full bg-violet-300 px-4 py-3 text-center text-violet-600 outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
 					placeholder="5"
 					defaultValue={tipPercent}
 					onChange={handleChange}
