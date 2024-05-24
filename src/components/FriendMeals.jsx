@@ -10,7 +10,7 @@ export default function FriendMeals() {
 	const users = useSelector(getAllUsers);
 
 	return (
-		<div className="space-y-8 rounded-2xl bg-stone-200 p-5">
+		<div className="min-w-80 space-y-8 rounded-2xl bg-stone-200 p-5">
 			{users.length === 0 ? (
 				<Text>Add a new payee...</Text>
 			) : (

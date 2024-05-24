@@ -33,7 +33,7 @@ export default function Tips() {
 	);
 
 	return (
-		<div className="flex h-fit flex-col rounded-2xl bg-stone-200 px-5 py-2.5">
+		<div className="flex h-fit min-w-80 flex-col rounded-2xl bg-stone-200 px-5 py-2.5">
 			<form className="flex items-center justify-between border-b border-b-stone-400 py-2.5">
 				<Text>Tip (%)</Text>
 				<input

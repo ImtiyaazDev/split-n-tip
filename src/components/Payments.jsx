@@ -17,7 +17,7 @@ export default function Payments() {
 	const billAmount = useSelector(getBillAmount);
 
 	return (
-		<div className="h-fit space-y-6 rounded-2xl bg-violet-200 p-5">
+		<div className="h-fit min-w-80 space-y-6 rounded-2xl bg-violet-200 p-5">
 			{users.length === 0 ? (
 				<Text>Add a new payee...</Text>
 			) : (
