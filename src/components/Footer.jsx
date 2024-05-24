@@ -2,7 +2,7 @@ export default function Footer() {
 	return (
 		<footer className="col-span-full">
 			<p className="font-heading text-stone-500">
-				Designed and built by
+				Designed and built by&nbsp;
 				<a
 					href="https:github.com/Imtiyaazdev"
 					target="_blank"
