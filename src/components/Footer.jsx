@@ -4,7 +4,7 @@ export default function Footer() {
 			<p className="font-heading text-stone-500">
 				Designed and built by&nbsp;
 				<a
-					href="https:github.com/Imtiyaazdev"
+					href="https://imtiyaazdev.vercel.app/"
 					target="_blank"
 					className="transition-colors duration-300 hover:text-violet-500"
 				>
