@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 const initialState = {
 	users: [],
 	billAmount: 0,
-	tipPercent: 10,
+	tipPercent: 0,
 	tipAmount: 0,
 	tipAmountPerPerson: 0
 };
@@ -38,7 +38,7 @@ const billSlice = createSlice({
 		resetState: (state) => {
 			state.users = [];
 			state.billAmount = 0;
-			state.tipPercent = 10;
+			state.tipPercent = 0;
 			state.tipAmountPerPerson = 0;
 			state.tipAmount = 0;
 		},
