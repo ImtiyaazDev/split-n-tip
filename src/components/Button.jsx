@@ -1,5 +1,5 @@
 export default function Button({ type, onClick, children, disabled }) {
-	const base = `rounded-full px-4 py-3 md:px-6 text-lg font-bold outline-none transition-colors duration-300 focus:ring-2 focus:ring-offset-2 ${disabled ? "cursor-not-allowed" : ""}`;
+	const base = `rounded-full px-4 py-3 md:px-6 text-lg font-bold outline-none transition-colors duration-300 focus:ring-2 focus:ring-offset-2 text-base md:text-lg ${disabled ? "cursor-not-allowed" : ""}`;
 
 	const styles = {
 		primary: `${base} bg-violet-500 text-violet-100 ${disabled ? "" : "hover:bg-violet-600 focus:ring-violet-500"}`,
