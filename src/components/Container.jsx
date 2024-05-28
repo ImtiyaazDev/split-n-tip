@@ -1,7 +1,9 @@
-export default function Container({ size, children }) {
+export default function Container({ size, spacer, children }) {
 	if (size === "lg")
 		return (
-			<div className="flex flex-col gap-4 md:flex md:grow md:flex-col md:gap-4">
+			<div
+				className={`flex flex-col gap-4 md:flex md:grow md:flex-col md:gap-4 ${spacer !== "" ? spacer : ""}`}
+			>
 				{children}
 			</div>
 		);
