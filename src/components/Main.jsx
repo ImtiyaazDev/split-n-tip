@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
 
 import { getIsModalOpen } from "../slices/modalSlice";
 import BillFormModal from "./BillFormModal";
