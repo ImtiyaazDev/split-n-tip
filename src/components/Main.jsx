@@ -22,11 +22,10 @@ export default function Main() {
 					<FriendMeals />
 				</Container>
 			</Container>
-			<Container size="lg">
-				<div className="absolute left-64 top-[116px] flex w-fit items-center gap-6 self-end rounded-full bg-violet-500 px-6 py-3 md:static">
-					<SunIcon className="size-7 cursor-pointer text-violet-100" />
-					<MoonIcon className="size-7 cursor-pointer text-violet-700" />
-				</div>
+			<Container
+				size="lg"
+				spacer="md:mt-[68px]"
+			>
 				{isOpen ? (
 					<BillFormModal />
 				) : (
