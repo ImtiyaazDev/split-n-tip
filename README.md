@@ -1,6 +1,6 @@
 # 💰 Split-n-Tip
 
-Split-n-Tip is a bill and tip calulating application built with React. This project includes a responsive design for mobile (or desktop) users. This project developed my confidence as a developer. I tried my best to structure the code and file structure for reusability and scalability.
+Split-n-Tip is a bill and tip calculating application built with React. This project includes a responsive design for mobile (or desktop) users. This project developed my confidence as a developer. I tried my best to structure the code and file structure for reusability and scalability.
 
 ## 🛠 Technologies
 
